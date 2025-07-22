@@ -46,6 +46,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.decompose)
+            implementation(libs.decompose.extension)
             implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {

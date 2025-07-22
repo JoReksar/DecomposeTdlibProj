@@ -12,6 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.arkivanov.decompose.extensions.compose.stack.Children
+import com.joreksar.decomposetdlibproject.navigation.RootComponent
+import com.joreksar.decomposetdlibproject.ui.ButtonScreenUi
+import com.joreksar.decomposetdlibproject.ui.DynamicTdLibUi
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
@@ -20,25 +24,15 @@ import decomposetdlibproject.composeapp.generated.resources.compose_multiplatfor
 
 @Composable
 @Preview
-fun App() {
+fun App(rootComponent: RootComponent) {
     MaterialTheme {
-        var showContent by remember { mutableStateOf(false) }
-        Column(
-            modifier = Modifier
-                .safeContentPadding()
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
+        Children(
+            stack = rootComponent.childStack,
+            modifier = Modifier.fillMaxSize()
         ) {
-            Button(onClick = { showContent = !showContent }) {
-                Text("Click me!")
-            }
-
-            AnimatedVisibility(showContent) {
-                val greeting = remember { Greeting().greet() }
-                Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
-                    Image(painterResource(Res.drawable.compose_multiplatform), null)
-                    Text("Compose: $greeting")
-                }
+            when (val instance = it.instance) {
+                is RootComponent.Child.ButtonScreen -> ButtonScreenUi(instance.buttonScreenComponent)
+                is RootComponent.Child.DynamicToLib -> DynamicTdLibUi(instance.dynamicTdLibComponent)
             }
         }
     }
