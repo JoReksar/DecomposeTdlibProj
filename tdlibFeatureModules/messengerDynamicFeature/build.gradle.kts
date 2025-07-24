@@ -31,6 +31,6 @@ android {
 
 dependencies {
     implementation(project(":composeApp"))
-    implementation(project(":sharedTdlibFeature"))
+    implementation(project(":tdlibFeatureModules:sharedTdlibFeature"))
     implementation(libs.androidx.core.ktx)
 }

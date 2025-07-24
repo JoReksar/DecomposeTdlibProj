@@ -10,10 +10,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.joreksar.decomposetdlibproject.navigation.DynamicTdLibComponent
+import com.joreksar.decomposetdlibproject.components.DynamicTdLibComponent
 
 @Composable
-fun DynamicTdLibUi(component: DynamicTdLibComponent) {
+fun TdlibFeatureUi(component: DynamicTdLibComponent) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter

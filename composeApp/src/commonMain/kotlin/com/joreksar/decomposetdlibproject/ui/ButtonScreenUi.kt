@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.joreksar.decomposetdlibproject.navigation.ButtonScreenComponent
+import com.joreksar.decomposetdlibproject.components.ButtonScreenComponent
 
 @Composable
 fun ButtonScreenUi(component: ButtonScreenComponent) {

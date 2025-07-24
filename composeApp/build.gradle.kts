@@ -53,7 +53,7 @@ kotlin {
             implementation(libs.kotlin.test)
         }
         iosMain.dependencies {
-            implementation(project(":sharedTdlibFeature"))
+            implementation(project(":tdlibFeatureModules:sharedTdlibFeature"))
         }
     }
 }
@@ -83,7 +83,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
-    dynamicFeatures += setOf(":messengerDynamicFeature")
+    dynamicFeatures += setOf(":tdlibFeatureModules:messengerDynamicFeature")
 }
 
 dependencies {

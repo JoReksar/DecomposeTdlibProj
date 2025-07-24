@@ -29,5 +29,5 @@ dependencyResolutionManagement {
 }
 
 include(":composeApp")
-include(":sharedTdlibFeature")
-include(":messengerDynamicFeature")
+include(":tdlibFeatureModules:sharedTdlibFeature")
+include(":tdlibFeatureModules:messengerDynamicFeature")

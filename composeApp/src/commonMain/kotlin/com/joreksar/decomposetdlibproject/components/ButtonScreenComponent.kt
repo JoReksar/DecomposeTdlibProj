@@ -1,4 +1,4 @@
-package com.joreksar.decomposetdlibproject.navigation
+package com.joreksar.decomposetdlibproject.components
 
 import com.arkivanov.decompose.ComponentContext
 
