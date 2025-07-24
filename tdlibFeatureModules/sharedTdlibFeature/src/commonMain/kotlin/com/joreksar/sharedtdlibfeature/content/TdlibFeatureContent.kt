@@ -1,4 +1,4 @@
-package com.joreksar.sharedtdlibfeature.ui
+package com.joreksar.sharedtdlibfeature.content
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -9,9 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.joreksar.sharedtdlibfeatureapi.components.TdlibFeatureComponent
-import com.joreksar.sharedtdlibfeatureapi.ui.DynamicTdlibFeatureUi
+import com.joreksar.sharedtdlibfeatureapi.content.DynamicTdlibFeatureContent
 
-class TdlibFeatureUi : DynamicTdlibFeatureUi {
+class TdlibFeatureContent : DynamicTdlibFeatureContent {
 
     @Composable
     override fun invoke(component: TdlibFeatureComponent) {

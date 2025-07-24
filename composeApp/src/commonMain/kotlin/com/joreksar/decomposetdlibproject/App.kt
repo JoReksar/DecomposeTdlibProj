@@ -6,8 +6,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.joreksar.decomposetdlibproject.components.RootComponent
-import com.joreksar.decomposetdlibproject.ui.ButtonScreenUi
-import com.joreksar.decomposetdlibproject.ui.createTdlibFeatureUi
+import com.joreksar.decomposetdlibproject.content.ButtonScreenContent
+import com.joreksar.decomposetdlibproject.content.createTdlibFeatureContent
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -19,10 +19,10 @@ fun App(rootComponent: RootComponent) {
             modifier = Modifier.fillMaxSize()
         ) {
             when (val instance = it.instance) {
-                is RootComponent.Child.ButtonScreen -> ButtonScreenUi(instance.buttonScreenComponent)
+                is RootComponent.Child.ButtonScreen -> ButtonScreenContent(instance.buttonScreenComponent)
                 is RootComponent.Child.TdlibFeature -> {
-                    val tdlibUi = remember({ createTdlibFeatureUi() })
-                    tdlibUi(instance.tdlibFeatureComponent)
+                    val tdlibContent = remember({ createTdlibFeatureContent() })
+                    tdlibContent(instance.tdlibFeatureComponent)
                 }
             }
         }

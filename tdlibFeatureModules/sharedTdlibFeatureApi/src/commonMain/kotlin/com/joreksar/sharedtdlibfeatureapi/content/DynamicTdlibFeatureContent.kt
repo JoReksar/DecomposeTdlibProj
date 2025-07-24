@@ -1,9 +1,9 @@
-package com.joreksar.sharedtdlibfeatureapi.ui
+package com.joreksar.sharedtdlibfeatureapi.content
 
 import androidx.compose.runtime.Composable
 import com.joreksar.sharedtdlibfeatureapi.components.TdlibFeatureComponent
 
-interface DynamicTdlibFeatureUi {
+interface DynamicTdlibFeatureContent {
 
     @Composable
     operator fun invoke(component: TdlibFeatureComponent)

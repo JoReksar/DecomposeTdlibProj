@@ -1,4 +1,4 @@
-package com.joreksar.decomposetdlibproject.ui
+package com.joreksar.decomposetdlibproject.content
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import com.joreksar.decomposetdlibproject.components.ButtonScreenComponent
 
 @Composable
-fun ButtonScreenUi(component: ButtonScreenComponent) {
+fun ButtonScreenContent(component: ButtonScreenComponent) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.BottomCenter
