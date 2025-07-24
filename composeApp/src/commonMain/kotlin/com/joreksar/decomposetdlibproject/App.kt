@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import com.arkivanov.decompose.extensions.compose.stack.Children
 import com.joreksar.decomposetdlibproject.components.RootComponent
 import com.joreksar.decomposetdlibproject.ui.ButtonScreenUi
-import com.joreksar.decomposetdlibproject.ui.TdlibFeatureUi
+import com.joreksar.decomposetdlibproject.ui.createTdlibFeatureUi
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -20,7 +20,10 @@ fun App(rootComponent: RootComponent) {
         ) {
             when (val instance = it.instance) {
                 is RootComponent.Child.ButtonScreen -> ButtonScreenUi(instance.buttonScreenComponent)
-                is RootComponent.Child.DynamicToLib -> TdlibFeatureUi(instance.dynamicTdLibComponent)
+                is RootComponent.Child.TdlibFeature -> {
+                    val tdlibUi = remember({ createTdlibFeatureUi() })
+                    tdlibUi(instance.tdlibFeatureComponent)
+                }
             }
         }
     }

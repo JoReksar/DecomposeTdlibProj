@@ -3,7 +3,6 @@ plugins {
     alias(libs.plugins.android.kotlin.multiplatform.library)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -12,7 +11,7 @@ kotlin {
     // which platforms this KMP module supports.
     // See: https://kotlinlang.org/docs/multiplatform-discover-project.html#targets
     androidLibrary {
-        namespace = "com.joreksar.sharedtdlibfeature"
+        namespace = "com.joreksar.sharedtdlibfeatureapi"
         compileSdk = 35
         minSdk = 24
 
@@ -33,7 +32,7 @@ kotlin {
     // A step-by-step guide on how to include this library in an XCode
     // project can be found here:
     // https://developer.android.com/kotlin/multiplatform/migrate
-    val xcfName = "sharedTdlibFeatureKit"
+    val xcfName = "sharedTdlibFeatureApiKit"
 
     iosX64 {
         binaries.framework {
@@ -62,14 +61,8 @@ kotlin {
         commonMain {
             dependencies {
                 implementation(libs.kotlin.stdlib)
-                implementation(libs.decompose)
-                implementation(libs.kotlinx.serialization.json)
                 implementation(compose.runtime)
-                implementation(compose.foundation)
-                implementation(compose.material3)
                 implementation(compose.ui)
-                implementation(compose.components.resources)
-                implementation(project(":tdlibFeatureModules:sharedTdlibFeatureApi"))
             }
         }
 

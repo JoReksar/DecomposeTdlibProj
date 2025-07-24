@@ -5,6 +5,7 @@ import com.arkivanov.decompose.router.stack.StackNavigation
 import com.arkivanov.decompose.router.stack.childStack
 import com.arkivanov.decompose.router.stack.pop
 import com.arkivanov.decompose.router.stack.pushNew
+import com.joreksar.sharedtdlibfeatureapi.components.TdlibFeatureComponent
 import kotlinx.serialization.Serializable
 
 class RootComponent(
@@ -23,14 +24,18 @@ class RootComponent(
 
     fun createChild(config: Config, componentContext: ComponentContext) : Child =
         when (config) {
-            Config.ButtonScreen -> Child.ButtonScreen(ButtonScreenComponent(componentContext, { stackNavigation.pushNew(Config.DynamicTdLib) }))
-            Config.DynamicTdLib -> Child.DynamicToLib(DynamicTdLibComponent(componentContext, { stackNavigation.pop() }))
+            Config.ButtonScreen -> Child.ButtonScreen(ButtonScreenComponent(componentContext) {
+                stackNavigation.pushNew(
+                    Config.TdlibFeature
+                )
+            })
+            Config.TdlibFeature -> Child.TdlibFeature(createTdlibFeatureComponent(componentContext))
         }
 
 
     sealed class Child {
         data class ButtonScreen(val buttonScreenComponent: ButtonScreenComponent) : Child()
-        data class DynamicToLib(val dynamicTdLibComponent: DynamicTdLibComponent) : Child()
+        data class TdlibFeature(val tdlibFeatureComponent: TdlibFeatureComponent) : Child()
     }
 
     @Serializable
@@ -38,6 +43,6 @@ class RootComponent(
         @Serializable
         data object ButtonScreen : Config
         @Serializable
-        data object DynamicTdLib : Config
+        data object TdlibFeature : Config
     }
 }

@@ -48,6 +48,7 @@ kotlin {
             implementation(libs.decompose)
             implementation(libs.decompose.extension)
             implementation(libs.kotlinx.serialization.json)
+            implementation(project(":tdlibFeatureModules:sharedTdlibFeatureApi"))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
