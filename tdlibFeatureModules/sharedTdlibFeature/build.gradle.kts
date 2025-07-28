@@ -39,15 +39,6 @@ kotlin {
         namespace = "com.joreksar.sharedtdlibfeature"
         compileSdk = 35
         minSdk = 24
-
-        withHostTestBuilder {
-        }
-
-        withDeviceTestBuilder {
-            sourceSetTreeName = "test"
-        }.configure {
-            instrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        }
     }
 
     // Source set declarations.
@@ -72,9 +63,7 @@ kotlin {
 
         androidMain {
             dependencies {
-                // Add Android-specific dependencies here. Note that this source set depends on
-                // commonMain by default and will correctly pull the Android artifacts of any KMP
-                // dependencies declared in commonMain.
+                implementation(project(":tdlibFeatureModules:tdlibFeatureAndroid"))
             }
         }
 

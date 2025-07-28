@@ -1,13 +1,21 @@
 plugins {
-    alias(libs.plugins.android.dynamic.feature)
+    alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlin.android)
 }
+
 android {
-    namespace = "com.joreksar.messengerdynamicfeature"
+    namespace = "com.joreksar.tdlibfeatureandroid"
     compileSdk = 35
 
     defaultConfig {
         minSdk = 24
+
+        consumerProguardFiles("consumer-rules.pro")
+        externalNativeBuild {
+            cmake {
+                cppFlags += ""
+            }
+        }
     }
 
     buildTypes {
@@ -26,10 +34,14 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+    externalNativeBuild {
+        cmake {
+            path = file("src/main/cpp/CMakeLists.txt")
+            version = "3.22.1"
+        }
+    }
 }
 
 dependencies {
-    implementation(project(":composeApp"))
-    implementation(project(":tdlibFeatureModules:sharedTdlibFeature"))
     implementation(libs.androidx.core.ktx)
 }
