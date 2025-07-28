@@ -4,11 +4,11 @@ import com.arkivanov.decompose.ComponentContext
 
 class ButtonScreenComponent(
     context: ComponentContext,
-    private val onButtonClicked : () -> Unit
+    private val onOpenTdlib : () -> Unit
 ) : ComponentContext by context {
 
-    fun goToTdLib() {
-        onButtonClicked()
+    fun openTdlib() {
+        onOpenTdlib()
     }
 
 }

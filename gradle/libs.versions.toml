@@ -16,6 +16,8 @@ kotlin = "2.2.0"
 kotlinStdlib = "2.2.0"
 runner = "1.5.2"
 core = "1.5.0"
+decompose = "3.3.0"
+playFeatureDelivery = "2.1.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -29,12 +31,14 @@ androidx-constraintlayout = { module = "androidx.constraintlayout:constraintlayo
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activity" }
 androidx-lifecycle-viewmodel = { module = "org.jetbrains.androidx.lifecycle:lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtimeCompose = { module = "org.jetbrains.androidx.lifecycle:lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-decompose = { module = "com.arkivanov.decompose:decompose", version = "3.3.0" }
-decompose-extension = { module = "com.arkivanov.decompose:extensions-compose", version = "3.3.0" }
+decompose = { module = "com.arkivanov.decompose:decompose", version.ref = "decompose" }
+decompose-extension = { module = "com.arkivanov.decompose:extensions-compose", version.ref = "decompose" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.9.0" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "kotlinStdlib" }
 androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 androidx-core = { group = "androidx.test", name = "core", version.ref = "core" }
+android-play-core = { module = "com.google.android.play:feature-delivery", version.ref = "playFeatureDelivery" }
+android-play-core-ktx = { module = "com.google.android.play:feature-delivery-ktx", version.ref = "playFeatureDelivery" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

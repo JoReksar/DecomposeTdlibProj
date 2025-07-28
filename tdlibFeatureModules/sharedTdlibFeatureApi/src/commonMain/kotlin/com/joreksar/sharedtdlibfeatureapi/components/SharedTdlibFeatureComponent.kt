@@ -1,5 +1,5 @@
 package com.joreksar.sharedtdlibfeatureapi.components
 
-interface TdlibFeatureComponent {
+interface SharedTdlibFeatureComponent {
     val text: String
 }

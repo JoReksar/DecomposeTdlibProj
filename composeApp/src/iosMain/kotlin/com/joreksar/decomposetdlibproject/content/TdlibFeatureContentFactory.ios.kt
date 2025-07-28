@@ -1,6 +1,6 @@
 package com.joreksar.decomposetdlibproject.content
 
 import com.joreksar.sharedtdlibfeature.content.TdlibFeatureContent
-import com.joreksar.sharedtdlibfeatureapi.content.DynamicTdlibFeatureContent
+import com.joreksar.sharedtdlibfeatureapi.content.SharedTdlibFeatureContent
 
-actual fun createTdlibFeatureContent() : DynamicTdlibFeatureContent = TdlibFeatureContent()
+actual fun createTdlibFeatureContent() : SharedTdlibFeatureContent = TdlibFeatureContent()

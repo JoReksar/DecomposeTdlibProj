@@ -1,6 +1,6 @@
 package com.joreksar.decomposetdlibproject.components
 
 import com.arkivanov.decompose.ComponentContext
-import com.joreksar.sharedtdlibfeatureapi.components.TdlibFeatureComponent
+import com.joreksar.sharedtdlibfeatureapi.components.SharedTdlibFeatureComponent
 
-expect fun createTdlibFeatureComponent(context: ComponentContext) : TdlibFeatureComponent
+expect fun createTdlibFeatureComponent(context: ComponentContext) : SharedTdlibFeatureComponent

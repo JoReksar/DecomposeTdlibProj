@@ -19,7 +19,7 @@ fun ButtonScreenContent(component: ButtonScreenComponent) {
         contentAlignment = Alignment.BottomCenter
     ) {
         Button(
-            onClick = { component.goToTdLib() },
+            onClick = { component.openTdlib() },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(start = 16.dp, end = 16.dp, bottom = 16.dp)

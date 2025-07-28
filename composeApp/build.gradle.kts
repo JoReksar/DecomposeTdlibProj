@@ -35,6 +35,8 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(libs.decompose)
+            implementation(libs.android.play.core)
+            implementation(libs.android.play.core.ktx)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
