@@ -1,7 +1,6 @@
 headers = td_json_client.h
 language = C
 package = tdlibwrapper
-moduleName = TDLib
 
 compilerOpts = -Fsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64 -Fsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64_x86_64-simulator -Isrc/iosMain/cinterop/include -Isrc/iosMain/cinterop/include/td/telegram
-linkerOpts = -framework TDLib -Fsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64 -framework TDLib -Fsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64_x86_64-simulator
+linkerOpts = -Lsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64 -ltdjson -Lsrc/iosMain/cinterop/libtdjson.xcframework/ios-arm64_x86_64-simulator -ltdjson

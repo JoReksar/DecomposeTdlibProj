@@ -25,7 +25,7 @@ kotlin {
         }
 
         compilations["main"].cinterops {
-            create("TDLib") {
+            create("tdlib") {
                 definitionFile = file("src/iosMain/cinterop/tdlib.def")
                 includeDirs("src/iosMain/cinterop/headers")
             }
